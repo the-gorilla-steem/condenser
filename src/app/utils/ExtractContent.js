@@ -71,12 +71,12 @@ export function extractBodySummary(body, strip_quotes = false) {
     // Grab only the first line (not working as expected. does rendering/sanitizing strip newlines?)
     desc = desc.trim().split('\n')[0];
 
-    if (desc.length > 140) {
-        desc = desc.substring(0, 140).trim();
+    if (desc.length > 400) {
+        desc = desc.substring(0, 400).trim();
 
         // Truncate, remove the last (likely partial) word (along with random punctuation), and add ellipses
         desc = desc
-            .substring(0, 120)
+            .substring(0, 380)
             .trim()
             .replace(/[,!\?]?\s+[^\s]+$/, '…');
     }

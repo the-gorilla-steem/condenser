@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     height: 4rem;
-    max-width: none;
+    max-width: 1600px;
 }
 
 .ConnectionError {
@@ -69,37 +69,28 @@
 }
 
 .Header__buttons {
+    @include font-size(14px);
+    border: 2px solid green;
     display: flex;
     align-items: center;
+    gap: 10px;
     justify-content: flex-end;
     height: 4rem;
     > .Header__user-signup {
+      border: 2px solid orange;
+      display: flex;
+      align-items: inherit;
+      gap: inherit;
         > a {
-            padding-right: 0.25rem;
-            font-size: 1.125rem;
-            font-family: $font-primary;
             &.Header__signup-link {
-                @extend .e-btn;
-                padding: 0.6rem;
+                //@extend .e-btn;
                 text-transform: none;
-                margin: 0 0.75rem 0 .5rem;
             }
             &.Header__login-link {
-                @extend .link;
-                @extend .link--primary;
+                //@extend .link;
+                //@extend .link--primary;
             }
         }
-    }
-    > a {
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
-        @include MQ(S) {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-        }
-    }
-    div.LoadingIndicator {
-        padding-right: 0.75rem;
     }
 }
 
@@ -139,17 +130,7 @@
 }
 
 span.Header__hamburger.toggle-menu {
-    width: 1rem;
-    height: 1rem;
     @include hamburger();
-    // This margin is to prevent user avatar overlapping the hamburger in the header.
-    margin-left: 0.25rem;
-    @include MQ(S) {
-        margin-left: 0.5rem;
-    }
-    @include MQ(M) {
-        margin-left: 0.75rem;
-    }
     cursor: pointer;
     &::after {
       transition: 0.2s all ease-in-out;
@@ -196,7 +177,6 @@ span.Header__hamburger.toggle-menu {
 .announcement-banner__text {
     margin: 0;
     padding: 10px 44px 10px 10px;
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.3;
  }

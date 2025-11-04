@@ -96,7 +96,6 @@
 .c-sidebar {
   width: 100%;
   flex: 0 0 320px;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   &__module {
     padding: 1.5em 2em;
     @include themify($themes) {
@@ -234,7 +233,7 @@
 }
 
 .articles {
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $font-primary;
   padding: 0em 1em;
   transition: all 0.2s ease-out;
   border: transparent;
@@ -244,9 +243,6 @@
   background-color: transparent;
   box-shadow: none;
 
-  h2 {
-    font-family: sans-serif;
-  }
   @include MQ(M) {
     padding: 0em 1em;
     min-width: 500px;
@@ -489,6 +485,7 @@
     -webkit-box-orient: vertical;
   }
   &__link {
+    border: 1px solid blue;
     text-decoration: none;
     @include themify($themes) {
       color: themed('textColorPrimary');
@@ -759,7 +756,8 @@ a#changeLayout:focus {
         }
       }
       &__h2 {
-        @include font-size(15px);
+        @include font-size(18px);
+        margin-bottom: calculateRem(10px);
 
         @include MQ(M) {
           -webkit-line-clamp: 1;
@@ -771,10 +769,13 @@ a#changeLayout:focus {
       }
       &__feature-img-container {
         overflow: hidden;
-        width: 130px;
-        height: 77px;
+        width: 178px;//130px;
+        height: 100px; //77px;
+        margin: 0;
+        padding: 0;
         position: relative;
         display: inline-block;
+        border: 3px solid red;
       }
       &__feature-img {
         position: absolute;
@@ -785,6 +786,13 @@ a#changeLayout:focus {
       &__summary-header {
         padding: 2px 0;
         border: transparent;
+        @include MQ(M) {
+          @include themify($themes) {
+            border-bottom: themed('border');
+          }
+          padding: calculateRem(12px) 0;
+          margin-bottom: calculateRem(12px);
+        }
       }
       &__summary-footer {
         padding: 2px 0 5px;
@@ -806,21 +814,25 @@ a#changeLayout:focus {
         display: -webkit-box;
         display: flex;
         align-items: top;
+        border: 4px solid green;
       }
       &__footer {
+        padding: calculateRem(12px) 0;
+        clear: both;
         @include themify($themes) {
           border-top: themed('borderLight');
-          margin-top: 0.25em;
         }
       }
       &__content-block {
         margin-bottom: 0;
         &--img {
           margin-right: 14px;
+          border: 3px solid yellow;
         }
         &--text {
-          margin-top: 0;
+          margin: 0;
           min-width: 300px;
+          border: 4px solid limegreen;
         }
       }
       &__tags {

@@ -161,7 +161,6 @@ h6 {
 .c-sidebar {
   width: 100%;
   max-width: 240px;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   &__module {
       padding: 1.5em 2em;
     @include themify($themes) {
@@ -241,4 +240,31 @@ a[rel="nofollow noopener"]:after {
 
 .pointer {
     cursor: pointer;
+}
+
+a.primaryButton {
+  border-radius: 12px;
+  line-height: normal;
+  padding: 11px 20px;
+  @include themify($themes) {
+    background-color: themed('newButtonPrimaryBG');
+    color: themed('newButtonPrimaryText');
+  }
+}
+
+a.secondaryButton {
+  border-radius: 12px;
+  line-height: normal;
+  font-weight: 600;
+  padding: 11px 20px;
+  transition: 0.2s all ease-in-out;
+  @include themify($themes) {
+    background-color: themed('newButtonSecondaryBG');
+    color: themed('newButtonSecondaryText');
+  }
+  &:hover {
+    @include themify($themes) {
+      background-color: themed('newButtonHoverBG');
+    }
+  }
 }

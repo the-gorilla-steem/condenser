@@ -128,7 +128,7 @@ table {
   height: unset;
   
   content: "\f065"; 
-  font-family: FontAwesome, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: FontAwesome, $font-primary;
   position: absolute;
   top: 12px;
   padding: 3px 11px 3px 10px;

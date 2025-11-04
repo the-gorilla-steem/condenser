@@ -15,7 +15,8 @@ import Headroom from 'react-headroom';
 import resolveRoute from 'app/ResolveRoute';
 import tt from 'counterpart';
 import { APP_NAME, APP_DOMAIN } from 'app/client_config';
-import ElasticSearchInput from 'app/components/elements/ElasticSearchInput';
+//import ElasticSearchInput from 'app/components/elements/ElasticSearchInput';
+import Icon from 'app/components/elements/Icon';
 import IconButton from 'app/components/elements/IconButton';
 import DropdownMenu from 'app/components/elements/DropdownMenu';
 import * as userActions from 'app/redux/UserReducer';
@@ -28,7 +29,6 @@ import SteemLogo from 'app/components/elements/SteemLogo';
 import Announcement from 'app/components/elements/Announcement';
 import { Map } from 'immutable';
 import ReactMutationObserver from '../../utils/ReactMutationObserver';
-import LoadingIndicator from 'app/components/elements/LoadingIndicator';
 
 class Header extends React.Component {
     static propTypes = {
@@ -361,19 +361,8 @@ class Header extends React.Component {
                                 </Link>
                             </div>
 
-                            <div className="large-1 columns show-for-large large-centered Header__sort">
-                                {/*
-                                <SortOrder
-                                    sortOrder={order}
-                                    topic={category === 'feed' ? '' : category}
-                                    horizontal
-                                    pathname={pathname}
-                                />
-                                */}
-                            </div>
-
-                            <div className="small-6 medium-8 large-7 columns Header__buttons">
-                                {/*CUSTOM SEARCH*/}
+                            <div className="small-6 medium-8 large-8 columns Header__buttons">
+                                {/*CUSTOM SEARCH
                                 <span
                                     className="Header__search--desktop--new"
                                     style={{ marginRight: 20 }}
@@ -387,20 +376,20 @@ class Header extends React.Component {
                                     <Link to="/search">
                                         <IconButton icon="magnifyingGlass" />
                                     </Link>
-                                </span>
+                                </span> */}
 
                                 {/*NOT LOGGED IN SIGN IN AND SIGN UP LINKS*/}
                                 {!loggedIn && (
                                     <span className="Header__user-signup show-for-medium">
                                         <a
-                                            className="Header__login-link"
+                                            className="Header__login-link primaryButton"
                                             href="/login.html"
                                             onClick={showLogin}
                                         >
                                             {tt('g.login')}
                                         </a>
                                         <a
-                                            className="Header__signup-link"
+                                            className="Header__signup-link secondaryButton"
                                             onClick={this.handleSignup}
                                         >
                                             {tt('g.sign_up')}
@@ -439,6 +428,18 @@ class Header extends React.Component {
                                     </DropdownMenu>
                                 )}
                                 {/*HAMBURGER*/}
+                                <Link
+                                    onClick={e => {
+                                        showSidePanel();
+                                        e.nativeEvent.stopImmediatePropagation();
+                                    }}
+                                >
+                                    <Icon
+                                        name="hamburger"
+                                        size="1_5x"
+                                        className="secondaryButton"
+                                    />
+                                </Link>
                                 <span
                                     onClick={e => {
                                         showSidePanel();

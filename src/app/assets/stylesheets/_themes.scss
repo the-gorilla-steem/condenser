@@ -1,5 +1,58 @@
 $themes: (
-  original: (
+// ============================================================
+//  THEMES
+//  ------------------------------------------------------------
+//  Defines CSS custom properties for light and dark themes
+//  based on the semantic variables from _variables.scss
+// ============================================================
+
+// ------------------------------------------------------------
+//  LIGHT THEME
+// ------------------------------------------------------------
+color-bg-page: $gray-50;
+color-bg-masthead: $base-white;
+color-linework: $gray-100;
+
+color-bg-button-primary: $teal-500;
+color-bg-button-primary-hover: $teal-600;
+color-bg-button-primary-disabled: $gray-50;
+
+color-bg-button-secondary: $gray-100;
+color-bg-button-secondary-hover: $gray-200;
+color-bg-button-secondary-disabled: $gray-50;
+
+color-text-button-primary: $gray-900;
+color-text-button-primary-disabled: $gray-500;
+
+color-text-button-secondary: $gray-900;
+color-text-button-secondary-disabled: $gray-500;
+
+radii-button: 12px;
+
+// ------------------------------------------------------------
+//  DARK THEME
+// ------------------------------------------------------------
+color-bg-page: $gray-900;
+color-bg-masthead: $gray-900;
+color-linework: $gray-800;
+
+color-bg-button-primary: $teal-500;
+color-bg-button-primary-hover: $teal-600;
+color-bg-button-primary-disabled: $gray-50;
+
+color-bg-button-secondary: $gray-100;
+color-bg-button-secondary-hover: $gray-200;
+color-bg-button-secondary-disabled: $gray-50;
+
+color-text-button-primary: $gray-900;
+color-text-button-primary-disabled: $gray-500;
+
+color-text-button-secondary: $gray-900;
+color-text-button-secondary-disabled: $gray-500;
+
+radii-button: 12px;  
+
+original: (
     colorAccent: $color-blue,
     colorAccentHover: $color-blue-original-light,
     colorAccentReverse: $color-blue-original-light,
@@ -85,6 +138,11 @@ $themes: (
     modalButtonIcon: $color-white,
     modalButtonDefault: $color-text-teal,
     modalButtonHover: #259573,
+    newButtonPrimaryBG: #00E0B8,
+    newButtonPrimaryText: #454B56,
+    newButtonSecondaryBG: #EFF1F3,
+    newButtonSecondaryText: #454B56,
+    newButtonHoverBG: #00E0B8,
   ),
   dark: (
     colorAccent: $color-teal,

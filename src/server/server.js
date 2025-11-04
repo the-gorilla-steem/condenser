@@ -47,6 +47,14 @@ const adstxt = fs.readFileSync(
     'utf8'
 );
 
+/*app.use(function*(next) {
+  yield next; // Let downstream middleware run first
+  console.log('=== Response ===');
+  console.log('Status:', this.status);
+  console.log('Type:', this.type);
+  console.log('Body:', typeof this.body === 'string' ? this.body.slice(0, 200) : '[non-string]');
+});*/
+
 // Serve static assets without fanfare
 app.use(
     favicon(path.join(__dirname, '../app/assets/images/favicons/favicon.ico'))

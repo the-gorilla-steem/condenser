@@ -11,8 +11,8 @@ ul.PostsList__summaries {
 }
 
 ul.PostsList__summaries > li {
-  padding: 0.1em 0.5em 0 0.5em;
-  margin-bottom: 0.8em;
+  padding: 0 calculateRem(24px);
+  margin-bottom: calculateRem(20px);
 
   @include themify($themes) {
     border-radius: themed('roundedCorners');
@@ -120,8 +120,7 @@ ul.PostsList__summaries > li {
 .PostSummary__body {
   width: auto;
   padding: 0 0 0.15rem;
-  font-size: 0.9rem;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: calculateRem(15px);
   @include themify($themes) {
     color: themed('textColorPrimary');
   }
@@ -134,12 +133,6 @@ ul.PostsList__summaries > li {
     @include themify($themes) {
       color: themed('textColorPrimary');
     }
-  }
-}
-
-.layout-list .PostSummary__body {
-  @include MQ(M) {
-    white-space: nowrap;
   }
 }
 
